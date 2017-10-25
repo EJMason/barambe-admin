@@ -1,0 +1,11 @@
+body {
+  -ms-overflow-style: scrollbar;
+  margin: 0;
+  padding: 0; }
+
+@media (min-width: 420px) {
+  html, body {
+    min-width: 320px; } }
+
+body {
+  background: #f5f5f5; }
