@@ -12,6 +12,7 @@
     "flow": "flow"
   },
   "dependencies": {
+    "bulma": "^0.6.0",
     "flow-bin": "^0.57.3",
     "node-sass-chokidar": "^0.0.3",
     "react": "^16.0.0",
