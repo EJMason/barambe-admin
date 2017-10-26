@@ -15,13 +15,13 @@ class App extends Component {
       <div class="columns is-gapless is-mobile is-marginless main-col">
 
         <MediaQuery query="(min-width: 768px)">
-          <div class="column is-narrow red">
+          <div class="column is-narrow">
 
-            <div className="sidebar-top red">
+            <div className="sidebar-top">
 
             </div>
-
-            <div className="sidebar-main">
+            <div className="side-color" />
+            <div className="sidebar-main shadow-right">
               <Sidebar />
             </div>
 
@@ -30,8 +30,22 @@ class App extends Component {
 
         <div className="column">
           <MediaQuery query="(max-width: 768px)">
-            <MobileBar />
+            {(matches) => {
+              if (matches) {
+                return <MobileBar />;
+              } else {
+                return (
+                  <div className="tabs is-right nav-main-bar">
+                    <ul>
+                      <li><a>Logout</a></li>
+                    </ul>
+                  </div>
+                );
+              }
+            }}
+
           </MediaQuery>
+
         </div>
       </div>
     );

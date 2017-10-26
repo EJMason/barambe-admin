@@ -6154,7 +6154,7 @@ body, html, #root {
   -moz-box-shadow: 0px 2px 3px -1px rgba(84, 84, 84, 0.2);
   box-shadow: 0px 2px 3px -1px rgba(84, 84, 84, 0.2); }
 
-.shadow-right {
+.shadow-right, .side-color {
   -webkit-box-shadow: 3px 0px 3px -1px rgba(84, 84, 84, 0.2);
   -moz-box-shadow: 3px 0px 3px -1px rgba(84, 84, 84, 0.2);
   box-shadow: 3px 0px 3px -1px rgba(84, 84, 84, 0.2); }
@@ -6164,15 +6164,24 @@ body, html, #root {
 
 .nav-main-bar {
   background-color: white;
-  height: 80px; }
+  margin-top: 30px; }
 
 .sidebar-main {
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 20px; }
+  padding-top: 20px;
+  width: 260px; }
+
+.side-color {
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  background-color: #363636;
+  z-index: -1; }
 
 .sidebar-top {
-  height: 70px; }
+  height: 70px;
+  background-color: #363636; }
 
 .main-col {
   height: 100%; }
