@@ -1,4 +1,35 @@
 
-.green-bg {
-  background-color: $blue;
+.shadow1 {
+  -webkit-box-shadow: 0px 2px 3px -1px rgba(84,84,84,0.2);
+  -moz-box-shadow: 0px 2px 3px -1px rgba(84,84,84,0.2);
+  box-shadow: 0px 2px 3px -1px rgba(84,84,84,0.2);
+}
+
+.shadow-right {
+  -webkit-box-shadow: 3px 0px 3px -1px rgba(84,84,84,0.2);
+  -moz-box-shadow: 3px 0px 3px -1px rgba(84,84,84,0.2);
+  box-shadow: 3px 0px 3px -1px rgba(84,84,84,0.2);
+}
+
+.nav-logo-box {
+  background-color: $dark;
+}
+
+.nav-main-bar {
+  @extend .shadow1;
+  background-color: $white;
+  height: 80px;
+}
+
+
+// ---------------- SIDEBAR ------------ //
+
+.sidebar-main {
+  // @extend .shadow-right;
+  width: 260px;
+  height: 100%;
+}
+
+.main-col {
+  height: 100%;
 }

@@ -6138,17 +6138,37 @@ label.panel-block {
 .red {
   border: 1px solid red; }
 
-body {
-  -ms-overflow-style: scrollbar;
-  margin: 0;
-  padding: 0; }
+.full {
+  height: 100%; }
 
-@media (min-width: 420px) {
-  html, body {
-    min-width: 320px; } }
+body, html, #root {
+  height: 100%;
+  border: 1px solid blue; }
 
-body {
-  background: #f5f5f5; }
+.high {
+  height: 100%;
+  border: 1px solid blue; }
 
-.green-bg {
-  background-color: #3273dc; }
+.shadow1, .nav-main-bar {
+  -webkit-box-shadow: 0px 2px 3px -1px rgba(84, 84, 84, 0.2);
+  -moz-box-shadow: 0px 2px 3px -1px rgba(84, 84, 84, 0.2);
+  box-shadow: 0px 2px 3px -1px rgba(84, 84, 84, 0.2); }
+
+.shadow-right {
+  -webkit-box-shadow: 3px 0px 3px -1px rgba(84, 84, 84, 0.2);
+  -moz-box-shadow: 3px 0px 3px -1px rgba(84, 84, 84, 0.2);
+  box-shadow: 3px 0px 3px -1px rgba(84, 84, 84, 0.2); }
+
+.nav-logo-box {
+  background-color: #363636; }
+
+.nav-main-bar {
+  background-color: white;
+  height: 80px; }
+
+.sidebar-main {
+  width: 260px;
+  height: 100%; }
+
+.main-col {
+  height: 100%; }
