@@ -17,7 +17,7 @@ class App extends Component {
         <MediaQuery query="(min-width: 768px)">
           <div class="column is-narrow red">
 
-            <div className="sidebar-top">
+            <div className="sidebar-top red">
 
             </div>
 

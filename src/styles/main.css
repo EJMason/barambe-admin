@@ -6168,10 +6168,15 @@ body, html, #root {
 
 .sidebar-main {
   padding-left: 10px;
-  padding-right: 10px; }
+  padding-right: 10px;
+  padding-top: 20px; }
 
 .sidebar-top {
   height: 70px; }
 
 .main-col {
   height: 100%; }
+
+hr {
+  padding: 0px;
+  margin: 10px; }

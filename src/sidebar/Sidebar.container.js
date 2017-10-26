@@ -20,11 +20,19 @@ export default class Sidebar extends Component {
               <i class="fa fa-home" aria-hidden="true" /> Dashboard
               </a>
             </li>
-            <br />
+            <hr />
+
+            <p className="menu-label">Admin</p>
 
             <li>
               <a href="#">
               <i class="fa fa-briefcase" aria-hidden="true"></i> Bar Info
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+              <i class="fa fa-money" aria-hidden="true"></i> Payment Info
               </a>
             </li>
 
@@ -54,6 +62,16 @@ export default class Sidebar extends Component {
           </ul>
 
           <p className="menu-label">Analytics</p>
+
+          <ul className="menu-list">
+
+            <li>
+              <a href="#">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> Order History
+              </a>
+            </li>
+
+          </ul>
 
         </aside>
     )
