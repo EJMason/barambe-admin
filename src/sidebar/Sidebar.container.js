@@ -5,34 +5,57 @@ export default class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true
+      open: true,
+      active: 'dashboard',
     }
   }
 
   render() {
     return (
-      <div className="column is-narrow sidebar-main red">
+        <aside className="menu">
 
-          <aside className="menu">
+          <ul className="menu-list">
+            <li>
+              <a className={(this.state.active === 'dashboard') ? "is-active" : ""} href="#">
+              <i class="fa fa-home" aria-hidden="true" /> Dashboard
+              </a>
+            </li>
+            <br />
 
-            <ul className="menu-list">
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="#">Bar Info</a></li>
-              <li><a href="#">Employees</a></li>
-            </ul>
+            <li>
+              <a href="#">
+              <i class="fa fa-briefcase" aria-hidden="true"></i> Bar Info
+              </a>
+            </li>
 
-            <p className="menu-label">Edit Menu</p>
+            <li>
+              <a href="#">
+                <i class="fa fa-user-circle" aria-hidden="true"/> Add/Remove Employees
+              </a>
+            </li>
+          </ul>
 
-            <ul className="menu-list">
-              <li><a href="#">Ingredients</a></li>
-              <li><a href="#">Menu Items</a></li>
-            </ul>
+          <p className="menu-label">Inventory</p>
 
-            <p className="menu-label">Analytics</p>
+          <ul className="menu-list">
 
-          </aside>
+            <li>
+              <a href="#">
+                <i class="fa fa-glass" aria-hidden="true"></i> Edit Liquors
+              </a>
+            </li>
 
-      </div>
+            <li>
+              <a href="#">
+              <i class="fa fa-beer" aria-hidden="true"></i> Edit Menu
+              </a>
+            </li>
+
+          </ul>
+
+          <p className="menu-label">Analytics</p>
+
+        </aside>
     )
   }
 }

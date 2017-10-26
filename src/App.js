@@ -15,12 +15,20 @@ class App extends Component {
       <div class="columns is-gapless is-mobile is-marginless main-col">
 
         <MediaQuery query="(min-width: 768px)">
-          <div class="column red">
-            First column
+          <div class="column is-narrow red">
+
+            <div className="sidebar-top">
+
+            </div>
+
+            <div className="sidebar-main">
+              <Sidebar />
+            </div>
+
           </div>
         </MediaQuery>
 
-        <div class="column red">
+        <div className="column">
           <MediaQuery query="(max-width: 768px)">
             <MobileBar />
           </MediaQuery>
@@ -28,23 +36,6 @@ class App extends Component {
       </div>
     );
   }
-  // render() {
-  //   return (
-  //     <div className="red">
-  //       <div className="red">
-  //         <Navbar />
-  //       </div>
-
-  //       <div className="columns full is-mobile is-gapless">
-  //           <Sidebar />
-  //         <div className="column">
-  //           body area
-  //         </div>
-  //       </div>
-
-  //     </div>
-  //   );
-  // }
 }
 
 export default App;

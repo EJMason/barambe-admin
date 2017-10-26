@@ -26,8 +26,12 @@
 
 .sidebar-main {
   // @extend .shadow-right;
-  width: 260px;
-  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar-top {
+  height: 70px;
 }
 
 .main-col {
