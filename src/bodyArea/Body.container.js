@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import BarInfo from './barInfo/BarInfo.container';
+
 export default class Body extends Component {
 
   constructor(props) {
@@ -13,7 +15,7 @@ export default class Body extends Component {
   render() {
     return (
       <div className="container is-fluid">
-        This is the bar info form
+        <BarInfo />
       </div>
     )
   }
