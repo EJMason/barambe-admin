@@ -18,7 +18,11 @@
 .nav-main-bar {
   @extend .shadow1;
   background-color: $white;
-  margin-top: 30px;
+  padding-top: 16px;
+  // z-index: 100;
+  i {
+    margin-left: 10px;
+  }
 }
 
 
@@ -29,7 +33,6 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
-  // background-color: $dark;
   width: 260px;
 }
 
@@ -46,14 +49,30 @@
   // @extend .shadow1;
   height: 70px;
   background-color: $dark;
+  border-bottom: 1px solid $grey;
 }
 
-.main-col {
+.bg-area {
+  position: relative;
+  top: 0px;
   height: 100%;
+  background-color: $white-ter;
+  z-index: -1;
 }
 
+.top {
+  z-index: 100;
+}
+
+.my-menu {
+
+  i {
+    margin-right: 10px;
+  }
+}
 
 hr {
   padding: 0px;
   margin: 10px;
 }
+

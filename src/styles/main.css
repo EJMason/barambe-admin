@@ -6142,8 +6142,7 @@ label.panel-block {
   height: 100%; }
 
 body, html, #root {
-  height: 100%;
-  border: 1px solid blue; }
+  height: 100%; }
 
 .high {
   height: 100%;
@@ -6164,7 +6163,9 @@ body, html, #root {
 
 .nav-main-bar {
   background-color: white;
-  margin-top: 30px; }
+  padding-top: 16px; }
+  .nav-main-bar i {
+    margin-left: 10px; }
 
 .sidebar-main {
   padding-left: 10px;
@@ -6181,10 +6182,21 @@ body, html, #root {
 
 .sidebar-top {
   height: 70px;
-  background-color: #363636; }
+  background-color: #363636;
+  border-bottom: 1px solid #7a7a7a; }
 
-.main-col {
-  height: 100%; }
+.bg-area {
+  position: relative;
+  top: 0px;
+  height: 100%;
+  background-color: whitesmoke;
+  z-index: -1; }
+
+.top {
+  z-index: 100; }
+
+.my-menu i {
+  margin-right: 10px; }
 
 hr {
   padding: 0px;

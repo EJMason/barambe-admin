@@ -12,33 +12,34 @@ export default class Sidebar extends Component {
 
   render() {
     return (
-        <aside className="menu">
+        <aside className="menu my-menu top">
 
           <ul className="menu-list">
             <li>
               <a className={(this.state.active === 'dashboard') ? "is-active" : ""} href="#">
-              <i class="fa fa-home" aria-hidden="true" /> Dashboard
+              <i className="fa fa-home" aria-hidden="true" /> Dashboard
               </a>
             </li>
+
             <hr />
 
             <p className="menu-label">Admin</p>
 
             <li>
               <a href="#">
-              <i class="fa fa-briefcase" aria-hidden="true"></i> Bar Info
+              <i className="fa fa-briefcase" aria-hidden="true"></i> Bar Info
               </a>
             </li>
 
             <li>
               <a href="#">
-              <i class="fa fa-money" aria-hidden="true"></i> Payment Info
+              <i className="fa fa-money" aria-hidden="true"></i> Payment Info
               </a>
             </li>
 
             <li>
               <a href="#">
-                <i class="fa fa-user-circle" aria-hidden="true"/> Add/Remove Employees
+                <i className="fa fa-user-circle" aria-hidden="true"/> Add/Remove Employees
               </a>
             </li>
           </ul>
@@ -49,13 +50,13 @@ export default class Sidebar extends Component {
 
             <li>
               <a href="#">
-                <i class="fa fa-glass" aria-hidden="true"></i> Edit Liquors
+                <i className="fa fa-glass" aria-hidden="true"></i> Edit Liquors
               </a>
             </li>
 
             <li>
               <a href="#">
-              <i class="fa fa-beer" aria-hidden="true"></i> Edit Menu
+              <i className="fa fa-beer" aria-hidden="true"></i> Edit Menu
               </a>
             </li>
 
@@ -67,7 +68,7 @@ export default class Sidebar extends Component {
 
             <li>
               <a href="#">
-              <i class="fa fa-bar-chart" aria-hidden="true"></i> Order History
+              <i className="fa fa-bar-chart" aria-hidden="true"></i> Order History
               </a>
             </li>
 
