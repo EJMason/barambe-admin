@@ -5,11 +5,6 @@ import { withStyles } from 'material-ui/styles';
 // Top Level
 import Navigator from './navigator/Navigator.container';
 
-
-// ! ESlint disble rule ! //
-/*eslint jsx-a11y/href-no-hash:0 */
-const drawerWidth = 300;
-
 const styles = theme => ({
   root: {
     width: '100%',
