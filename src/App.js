@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 // import MediaQuery from 'react-responsive';
 import { withStyles } from 'material-ui/styles';
-import Drawer from 'material-ui/Drawer';
-import List from 'material-ui/List';
 import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
+import { grey } from 'material-ui/colors';
 
+// Top Level
 import Topbar from './topBar/Topbar.container';
 import Sidebar from './sidebar/Sidebar.container';
+
 
 // ! ESlint disble rule ! //
 /*eslint jsx-a11y/href-no-hash:0 */
@@ -27,19 +27,10 @@ const styles = theme => ({
     width: '100%',
     height: '100%',
   },
-  appBar: {
-    position: 'absolute',
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-  },
-  drawerPaper: {
-    position: 'relative',
-    height: '100%',
-    width: drawerWidth,
-  },
-  drawerHeader: '',
+
+  // below here will eventually go
   content: {
-    backgroundColor: theme.palette.primary['A700'],
+    backgroundColor: grey[300],
     width: '100%',
     padding: theme.spacing.unit * 3,
     height: 'calc(100% - 56px)',

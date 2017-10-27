@@ -8,7 +8,7 @@ import Drawer from 'material-ui/Drawer';
 // import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 
-import { blueGrey } from 'material-ui/colors';
+import { grey } from 'material-ui/colors';
 
 const drawerWidth = 300;
 
@@ -17,7 +17,7 @@ const styles = theme => ({
     position: 'relative',
     height: '100%',
     width: drawerWidth,
-    background: blueGrey[900]
+    background: grey[900]
   },
   drawerHeader: {
     minHeight: 100
