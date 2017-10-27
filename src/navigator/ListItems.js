@@ -4,8 +4,9 @@ import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
 import Collapse from 'material-ui/transitions/Collapse';
 import { withStyles } from 'material-ui/styles';
+import classNames from 'classnames';
 
-import { blue } from 'material-ui/colors';
+import { blue, grey } from 'material-ui/colors';
 
 const styles = theme => ({
   root: {
@@ -14,16 +15,22 @@ const styles = theme => ({
     background: theme.palette.background.paper,
   },
   isActive: {
-    background: blue[200]
+    background: blue[50]
+  },
+  inactiveText: {
+    color: grey[300]
+  },
+  activeText: {
+
   }
 });
 
 export const SideItem = (props) => (
-  <ListItem button className={props.isActive ? props.classes.isActive : ''}>
+  <ListItem button disabled={props.isActive} className={props.isActive ? props.classes.isActive : ''}>
     <ListItemIcon>
       {props.Icon}
     </ListItemIcon>
-    <ListItemText inset primary={props.label} />
+    <ListItemText classes={{text: !props.isActive ? props.classes.inactiveText : null}} inset primary={props.label} />
   </ListItem>
 );
 
