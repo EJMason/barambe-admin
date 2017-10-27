@@ -1,64 +1,91 @@
 import React, { Component } from 'react';
-import MediaQuery from 'react-responsive';
+// import MediaQuery from 'react-responsive';
+import { withStyles } from 'material-ui/styles';
+import Drawer from 'material-ui/Drawer';
+import List from 'material-ui/List';
+import Typography from 'material-ui/Typography';
+import Divider from 'material-ui/Divider';
 
-// import Navbar from './navbar/Navbar.container';
+import Topbar from './topBar/Topbar.container';
 import Sidebar from './sidebar/Sidebar.container';
-import MobileBar from './navbar/MobileBar.container';
-import BodyArea from './bodyArea/Body.container';
 
 // ! ESlint disble rule ! //
 /*eslint jsx-a11y/href-no-hash:0 */
+const drawerWidth = 300;
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    height: '100%',
+    marginTop: 0,
+    zIndex: 1,
+    overflow: 'hidden',
+  },
+  appFrame: {
+    position: 'relative',
+    display: 'flex',
+    width: '100%',
+    height: '100%',
+  },
+  appBar: {
+    position: 'absolute',
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+  },
+  drawerPaper: {
+    position: 'relative',
+    height: '100%',
+    width: drawerWidth,
+  },
+  drawerHeader: '',
+  content: {
+    backgroundColor: theme.palette.primary['A700'],
+    width: '100%',
+    padding: theme.spacing.unit * 3,
+    height: 'calc(100% - 56px)',
+    marginTop: 0,
+    [theme.breakpoints.up('sm')]: {
+      height: 'calc(100% - 64px)',
+      marginTop: 64,
+    },
+  },
+});
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
   render() {
-    return(
-      <div className="columns is-gapless is-mobile is-marginless bg-area">
+    const { classes } = this.props;
 
-        <MediaQuery query="(min-width: 768px)">
-          <div className="column is-narrow">
+    return (
+    <div className={classes.root}>
+      <div className={classes.appFrame}>
 
-            <div className="sidebar-top">
+        {/* We will component everything under here... */}
 
-            </div>
-            <div className="side-color" />
-            <div className="sidebar-main shadow-right">
-              <Sidebar />
-            </div>
+        <Topbar></Topbar>
 
-          </div>
-        </MediaQuery>
+        <Sidebar />
 
-        <div className="column">
-          <MediaQuery query="(max-width: 768px)">
-            {(matches) => {
-              if (matches) {
-                return <MobileBar />;
-              } else {
-                return (
-                  <div className="tabs is-right nav-main-bar">
-                    <ul>
-                      <li>
-                        <a>Logout <i className="fa fa-sign-out" aria-hidden="true"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                );
-              }
-            }}
+        <main className={classes.content}>
+          <Typography type="body1" noWrap>
 
-          </MediaQuery>
+            This is the main area
 
 
-          <div className="">
-            <BodyArea />
-          </div>
+          </Typography>
+        </main>
 
-
-        </div>
       </div>
-    );
+    </div>
+  );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

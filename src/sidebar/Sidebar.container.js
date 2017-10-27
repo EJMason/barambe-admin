@@ -1,80 +1,54 @@
 import React, { Component } from 'react';
 
-export default class Sidebar extends Component {
+import { withStyles } from 'material-ui/styles';
+import Drawer from 'material-ui/Drawer';
+// import AppBar from 'material-ui/AppBar';
+// import Toolbar from 'material-ui/Toolbar';
+// import List from 'material-ui/List';
+// import Typography from 'material-ui/Typography';
+import Divider from 'material-ui/Divider';
+
+import { blueGrey } from 'material-ui/colors';
+
+const drawerWidth = 300;
+
+const styles = theme => ({
+  drawerPaper: {
+    position: 'relative',
+    height: '100%',
+    width: drawerWidth,
+    background: blueGrey[900]
+  },
+  drawerHeader: {
+    minHeight: 100
+  },
+});
+
+class Sidebar extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      open: true,
-      active: 'dashboard',
-    }
+    this.state = {}
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
-        <aside className="menu my-menu top">
-
-          <ul className="menu-list">
-            <li>
-              <a className={(this.state.active === 'dashboard') ? "is-active" : ""} href="#">
-              <i className="fa fa-home" aria-hidden="true" /> Dashboard
-              </a>
-            </li>
-
-            <hr />
-
-            <p className="menu-label">Admin</p>
-
-            <li>
-              <a href="#">
-              <i className="fa fa-briefcase" aria-hidden="true"></i> Bar Info
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-              <i className="fa fa-money" aria-hidden="true"></i> Payment Info
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-                <i className="fa fa-user-circle" aria-hidden="true"/> Add/Remove Employees
-              </a>
-            </li>
-          </ul>
-
-          <p className="menu-label">Inventory</p>
-
-          <ul className="menu-list">
-
-            <li>
-              <a href="#">
-                <i className="fa fa-glass" aria-hidden="true"></i> Edit Liquors
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-              <i className="fa fa-beer" aria-hidden="true"></i> Edit Menu
-              </a>
-            </li>
-
-          </ul>
-
-          <p className="menu-label">Analytics</p>
-
-          <ul className="menu-list">
-
-            <li>
-              <a href="#">
-              <i className="fa fa-bar-chart" aria-hidden="true"></i> Order History
-              </a>
-            </li>
-
-          </ul>
-
-        </aside>
+      <Drawer type="permanent"
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <div className={classes.drawerHeader} />
+          <Divider />
+          hello
+          {/* <List>{mailFolderListItems}</List> */}
+          <Divider />
+          {/* <List>{otherMailFolderListItems}</List> */}
+        </Drawer>
     )
   }
 }
+
+export default withStyles(styles)(Sidebar);
