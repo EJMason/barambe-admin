@@ -4,12 +4,10 @@ import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-// import ListSubheader from 'material-ui/List/ListSubheader';
 import List from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 
 import StoreIcon from 'material-ui-icons/Store';
-import DraftsIcon from 'material-ui-icons/Drafts';
 import DashboardIcon from 'material-ui-icons/Dashboard';
 import CreditIcon from 'material-ui-icons/CreditCard';
 import GroupIcon from 'material-ui-icons/Group';
@@ -79,7 +77,9 @@ class Navigator extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+
+    }
   }
 
   render() {
@@ -94,23 +94,31 @@ class Navigator extends Component {
         </AppBar>
 
         <Drawer type="permanent" classes={{ paper: classes.drawerPaper }}>
+
           <div className={classes.drawerHeader} />
           <List className={classes.listStyle}>
 
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<DashboardIcon />} isActive={true} label="Dashboard"/>
+
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<StoreIcon className={classes.invIcon} />} label="Bar Info" />
+
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<CreditIcon className={classes.invIcon} />} label="Payments" />
+
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<GroupIcon className={classes.invIcon} />} label="Employees" />
+
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<RoomserviceIcon className={classes.invIcon} />} label="Menu" />
+
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<EqualizerIcon className={classes.invIcon} />} label="Orders" />
+
             <Divider className={classes.line} light={true} />
             <SidebarItem Icon={<TrendingIcon className={classes.invIcon} />} label="Analytics" />
+
             <Divider className={classes.line} light={true} />
 
           </List>

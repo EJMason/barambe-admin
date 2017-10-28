@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import ExpandLess from 'material-ui-icons/ExpandLess';
@@ -25,7 +27,8 @@ const styles = theme => ({
   }
 });
 
-export const SideItem = (props) => (
+
+const SideItem = (props) => (
   <ListItem button disabled={props.isActive} className={props.isActive ? props.classes.isActive : ''}>
     <ListItemIcon>
       {props.Icon}
