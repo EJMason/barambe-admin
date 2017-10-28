@@ -1,6 +1,11 @@
-
+/**
+ * Sidebar items
+ */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+// ------------- UI Elements ------------------- //
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
@@ -36,6 +41,17 @@ const SideItem = (props) => (
     <ListItemText classes={{text: !props.isActive ? props.classes.inactiveText : null}} inset primary={props.label} />
   </ListItem>
 );
+
+// const ExpandableSidebarItem = (props) => (
+
+// );
+
+// SideItem.propTypes = {
+//   isActive: PropTypes.bool,
+//   classes: PropTypes.shape({
+//     root:
+//   })
+// }
 
 
 export const SidebarItem = withStyles(styles)(SideItem);
