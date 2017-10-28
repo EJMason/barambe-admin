@@ -72,51 +72,53 @@ class Navigator extends Component {
     super(props);
     this.state = {
       openDrawer: '',
+      selection: '',
     }
   }
 
   selectOpenDrawer = (drawerName) => {
-    console.log('Open the drawer!');
-
-    if(this.state.openDrawer === drawerName) {
-      drawerName = '';
-    }
-
     this.setState({
       ...this.state,
-      openDrawer: drawerName
+      openDrawer: this.state.openDrawer === drawerName ? '' : drawerName
+    })
+  }
+
+  menuSelector = (e, menuName) => {
+    e.preventDefault();
+    this.setState({
+      ...this.state,
+      selection: this.state.selection === menuName ? '' : menuName
     })
   }
 
   render() {
+    console.log(`This is the selection --> |${this.state.selection}|`)
     const { classes } = this.props;
     return (
       <div className={classes.appFrame}>
 
         <AppBar className={classes.appBar}>
-          <Toolbar>
-          </Toolbar>
+          <Toolbar></Toolbar>
         </AppBar>
 
         <Drawer type="permanent" classes={{ paper: classes.drawerPaper }}>
-
           <div className={classes.drawerHeader} />
+
           <List className={classes.listStyle}>
 
-          <Divider className={classes.line} light={true} />
-
             { ListConfig.reduce((iter, item) => {
-              console.log(item.IconComponent)
               iter.push(
                 <SidebarItem
                   key={`side_${item.identifier}`}
+                  toggleItem={this.menuSelector}
                   Icon={React.cloneElement(item.IconComponent, { className: classes.invIcon })}
-                  isActive={false}
+                  ident={item.identifier}
+                  isActive={this.state.selection === item.identifier}
                   label={item.label} />,
                 <Divider key={`divider_${item.identifier}`} className={classes.line} light={true} />
               )
               return iter;
-            }, [])}
+            }, [<Divider key={`first`} className={classes.line} light={true} />])}
 
 
             <ExpandableSidebarItem

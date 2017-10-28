@@ -40,7 +40,11 @@ const styles = theme => ({
 });
 
 const SideItem = (props) => (
-  <ListItem button disabled={props.isActive} className={props.isActive ? props.classes.isActive : ''}>
+  <ListItem
+    onClick={(e) => props.toggleItem(e, props.ident)}
+
+    disabled={props.isActive}
+    className={props.isActive ? props.classes.isActive : ''}>
     <ListItemIcon>
       {props.Icon}
     </ListItemIcon>
