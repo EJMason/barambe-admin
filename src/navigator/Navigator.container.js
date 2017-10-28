@@ -7,17 +7,17 @@ import Toolbar from 'material-ui/Toolbar';
 import List from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 
-import StoreIcon from 'material-ui-icons/Store';
 import DashboardIcon from 'material-ui-icons/Dashboard';
+import StoreIcon from 'material-ui-icons/Store';
 import CreditIcon from 'material-ui-icons/CreditCard';
 import GroupIcon from 'material-ui-icons/Group';
 import RoomserviceIcon from 'material-ui-icons/RoomService';
 import TrendingIcon from 'material-ui-icons/TrendingUp';
 import EqualizerIcon from 'material-ui-icons/Equalizer';
+import { grey } from 'material-ui/colors';
 
 import { SidebarItem, SubItem, ExpandableSidebarItem } from './ListItems';
-
-import { grey } from 'material-ui/colors';
+import ListConfig from './ListConfig';
 
 const drawerWidth = 300;
 const topBarHeight= 80;
@@ -94,19 +94,6 @@ class Navigator extends Component {
     })
   }
 
-  // selectOpenDrawer(drawerName) {
-  //   console.log('Open the drawer!');
-
-  //   if(this.state.openDrawer === drawerName) {
-  //     drawerName = '';
-  //   }
-
-  //   this.setState({
-  //     ...this.state,
-  //     openDrawer: drawerName
-  //   })
-  // }
-
   render() {
     const { classes } = this.props;
     return (
@@ -122,28 +109,16 @@ class Navigator extends Component {
           <div className={classes.drawerHeader} />
           <List className={classes.listStyle}>
 
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<DashboardIcon />} isActive={true} label="Dashboard"/>
+          <Divider className={classes.line} light={true} />
 
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<StoreIcon className={classes.invIcon} />} label="Bar Info" />
+            { ListConfig.reduce((iter, item) => {
+              iter.push(
+                <SidebarItem Icon={item.IconComponent} isActive={false} label={item.label}/>,
+                <Divider className={classes.line} light={true} />
+              )
+              return iter;
+            }, [])}
 
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<CreditIcon className={classes.invIcon} />} label="Payments" />
-
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<GroupIcon className={classes.invIcon} />} label="Employees" />
-
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<RoomserviceIcon className={classes.invIcon} />} label="Menu" />
-
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<EqualizerIcon className={classes.invIcon} />} label="Orders" />
-
-            <Divider className={classes.line} light={true} />
-            <SidebarItem Icon={<TrendingIcon className={classes.invIcon} />} label="Analytics" />
-
-            <Divider className={classes.line} light={true} />
 
             <ExpandableSidebarItem
               toggleDrawer={this.selectOpenDrawer}
