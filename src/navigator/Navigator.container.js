@@ -15,9 +15,7 @@ import RoomserviceIcon from 'material-ui-icons/RoomService';
 import TrendingIcon from 'material-ui-icons/TrendingUp';
 import EqualizerIcon from 'material-ui-icons/Equalizer';
 
-
-
-import { SidebarItem } from './ListItems';
+import { SidebarItem, SubItem, ExpandableSidebarItem } from './ListItems';
 
 import { grey } from 'material-ui/colors';
 
@@ -73,18 +71,44 @@ const styles = theme => ({
   }
 });
 
+
 class Navigator extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-
+      openDrawer: '',
     }
   }
 
+  selectOpenDrawer = (drawerName) => {
+    console.log('Open the drawer!');
+
+    if(this.state.openDrawer === drawerName) {
+      drawerName = '';
+    }
+
+    this.setState({
+      ...this.state,
+      openDrawer: drawerName
+    })
+  }
+
+  // selectOpenDrawer(drawerName) {
+  //   console.log('Open the drawer!');
+
+  //   if(this.state.openDrawer === drawerName) {
+  //     drawerName = '';
+  //   }
+
+  //   this.setState({
+  //     ...this.state,
+  //     openDrawer: drawerName
+  //   })
+  // }
+
   render() {
     const { classes } = this.props;
-
     return (
       <div className={classes.appFrame}>
 
@@ -120,6 +144,15 @@ class Navigator extends Component {
             <SidebarItem Icon={<TrendingIcon className={classes.invIcon} />} label="Analytics" />
 
             <Divider className={classes.line} light={true} />
+
+            <ExpandableSidebarItem
+              toggleDrawer={this.selectOpenDrawer}
+              Icon={<TrendingIcon className={classes.invIcon} />}
+              label="Collapser"
+              open={this.state.openDrawer === 'Collapser'}
+            >
+              <SubItem Icon={<TrendingIcon className={classes.invIcon} />} label="Analytics" />
+            </ExpandableSidebarItem>
 
           </List>
 
