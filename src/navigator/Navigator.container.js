@@ -6,18 +6,12 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import List from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-
-import DashboardIcon from 'material-ui-icons/Dashboard';
-import StoreIcon from 'material-ui-icons/Store';
-import CreditIcon from 'material-ui-icons/CreditCard';
-import GroupIcon from 'material-ui-icons/Group';
-import RoomserviceIcon from 'material-ui-icons/RoomService';
 import TrendingIcon from 'material-ui-icons/TrendingUp';
-import EqualizerIcon from 'material-ui-icons/Equalizer';
+
 import { grey } from 'material-ui/colors';
 
 import { SidebarItem, SubItem, ExpandableSidebarItem } from './ListItems';
-import ListConfig from './ListConfig';
+import ListConfig, {properIcon} from './ListConfig';
 
 const drawerWidth = 300;
 const topBarHeight= 80;
@@ -112,9 +106,14 @@ class Navigator extends Component {
           <Divider className={classes.line} light={true} />
 
             { ListConfig.reduce((iter, item) => {
+              console.log(item.IconComponent)
               iter.push(
-                <SidebarItem Icon={item.IconComponent} isActive={false} label={item.label}/>,
-                <Divider className={classes.line} light={true} />
+                <SidebarItem
+                  key={`side_${item.identifier}`}
+                  Icon={React.cloneElement(item.IconComponent, { className: classes.invIcon })}
+                  isActive={false}
+                  label={item.label} />,
+                <Divider key={`divider_${item.identifier}`} className={classes.line} light={true} />
               )
               return iter;
             }, [])}
